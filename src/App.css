@@ -1,0 +1,25 @@
+#root {
+  margin: 0 auto;
+  width: 1680px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+button{
+  width: auto;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 18px;
+  color: black;
+  font-weight: bold;
+  
+}

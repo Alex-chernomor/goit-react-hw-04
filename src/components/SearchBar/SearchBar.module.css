@@ -1,0 +1,14 @@
+.input{
+    font-size: 16px;
+    padding: 8px 10px 8px 10px;
+    border: 1px solid #999696;
+    border-radius: 7px;
+    outline: none;
+}
+
+.formik{
+        gap: 20px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+}

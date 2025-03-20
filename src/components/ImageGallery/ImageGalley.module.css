@@ -1,0 +1,32 @@
+.imageList{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* .app {
+    text-align: center;
+    margin-top: 20px;
+  } */
+  
+  .imageList {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  
+  .imageCard {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+  }
+  
+  .imageCard:hover {
+    transform: scale(1.1);
+  }
