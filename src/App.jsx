@@ -8,11 +8,13 @@ import Loader from './components/Loader/Loader';
 import ErrorMessage from './components/ErrorMessage/ErrorMessage';
 import LoadMoreBtn from './components/LoadMoreBtn/LoadMoreBtn';
 import NoMorePages from './components/ErrorMessage/NoMorePages';
+import toast, {Toaster} from 'react-hot-toast';
 import './App.css';
 
 Modal.setAppElement("#root"); 
 
 function App() {
+  
   const [images, setImages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
@@ -20,10 +22,9 @@ function App() {
   const [page, setPage] = useState(1);
   const [maxPage, setMaxPage] = useState(0);
   const [noImg, setNoImg] = useState(false)
-
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalImage, setModalImage] = useState(null);
-
+  
   const openModal = (image) => {
     setModalImage(image);
     setIsModalOpen(true);
@@ -32,28 +33,29 @@ function App() {
     setIsModalOpen(false);
     setModalImage(null);
   };
-
+  
+  const notify = () => toast('Whrite something into the input',  {
+    style: {
+      border: '1px solid red',
+      color: "red",
+      fontWeight: "bold",
+      backgroundColor: "black"
+    },
+  });
 
   const handleSearch = async (topic)=>{
     setSearchImg(topic);
     setPage(1);
     setImages([]);
-    setNoImg(false)
-    
+    setNoImg(false);
+    if(topic===''){
+      notify()
+    }
   }; 
-
+  
   const handleLoadMoreClickBtn = () =>{
     setPage(page + 1);
   }
-
-  useEffect(() => {
-    if (isModalOpen && modalImage) {
-      return;
-    }
-    if (modalImage) {
-      openModal(modalImage);
-    }
-  }, [modalImage]);
 
   useEffect(()=>{
     if(searchImg === ''){
@@ -81,6 +83,7 @@ function App() {
     getData()
   },[page, searchImg]);
 
+  
   return (
     <>
     <Header onSearch = {handleSearch}/>
@@ -95,6 +98,10 @@ function App() {
           image={modalImage}
           closeModal={closeModal}
         />
+
+
+      <Toaster />
+ 
     </>
   )
 }

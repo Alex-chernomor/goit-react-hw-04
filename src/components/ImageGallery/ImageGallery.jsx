@@ -1,4 +1,4 @@
-import ImageCard from "./ImageCard/ImageCard";
+import ImageCard from "../ImageCard/ImageCard";
 import css from './ImageGalley.module.css'
 
 

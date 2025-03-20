@@ -11,7 +11,6 @@ const ImageModal = ({ isOpen, image, closeModal }) => {
     <Modal
       isOpen={isOpen}
       onRequestClose={closeModal}
-      // contentLabel="Image Modal"
       className={css.modal}
       overlayClassName={css.overlay}
       onKeyDown={(e) => {

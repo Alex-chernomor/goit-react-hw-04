@@ -5,14 +5,6 @@
   text-align: center;
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
 button{
   width: auto;
   padding: 10px;
@@ -21,5 +13,4 @@ button{
   font-size: 18px;
   color: black;
   font-weight: bold;
-  
 }
