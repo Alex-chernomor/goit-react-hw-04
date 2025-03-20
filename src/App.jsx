@@ -100,7 +100,13 @@ function App() {
         />
 
 
-      <Toaster />
+      <Toaster 
+       toastOptions={{
+         duration: 1500,
+         removeDelay: 300,
+        }
+        }
+      />
  
     </>
   )
